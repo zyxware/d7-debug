@@ -1,0 +1,5 @@
+Bugs reported by the client:
+
+1) There are several PHP warnings in the Drupal error log.
+2) Cannot access About page.
+3) Cannot execute update.php

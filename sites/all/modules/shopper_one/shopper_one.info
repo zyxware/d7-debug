@@ -1,0 +1,5 @@
+name  = Shopper One
+description = The module that implements the Shopper One feature.
+core  = 7.x
+version = "7.x-0.0"
+package = ABC commerce modules

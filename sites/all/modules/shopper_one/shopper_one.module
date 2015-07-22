@@ -1,0 +1,45 @@
+<?php
+/**
+ * @file
+ * Module that implements the shopper one feature of xyz.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function shopper_one_menu() {
+  $items = array();
+
+  // Define an always accessible path to receive IPNs.
+  $items['shopper-one'] = array(
+    'page callback' => 'shopper_one_process',
+    'page arguments' => array(),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Menu callback for processing DMN notifications.
+ */
+function shopper_one_process() {
+  return "Shopper one";
+}
+
+/**
+ * Implements hook_form_alter() views_exposed_form_display_products_page
+ */
+function shopper_one_form_search_block_form_alter(&$form, &$form_state, $form_id) {
+  $form['#submit'][] = 'shopper_one_search';
+}
+
+function shopper_one_search(&$form, &$form_state) {
+  $x = array($form_state['values']['search_block_form'], format_interval(4234));
+  $form_state['shopper_one'] = check_plain($x);
+}
+
+
+
+
